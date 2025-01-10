@@ -25,7 +25,7 @@ const LoginPage = () => {
 
     setLoading(true);
     try {
-      const { data } = await axios.post('https://websitebaju.vercel.app/login', {
+      const { data } = await axios.post('http://localhost:5000/api/users/login', {
         email,
         password,
       });
