@@ -54,7 +54,6 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {/* Menampilkan nama lengkap pengguna jika tersedia */}
       {userFullname && <div className="user-fullname">Welcome, {userFullname}</div>}
     </header>
   );
@@ -106,9 +105,15 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Header onLogout={handleLogout} />
-      <h2 className="text-center mt-4">Dashboard Produk</h2>
+      <h2 className="text-center mt-4">Dashboard Produk - Custom T-Shirt</h2>
+      <p className="text-center">
+        Temukan T-shirt custom berkualitas tinggi dengan berbagai pilihan warna, ukuran, dan desain
+        yang dapat disesuaikan dengan keinginan Anda!
+      </p>
+
       {!isLoggedIn && <p>Silakan login untuk melihat produk.</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
+
       {isLoggedIn && (
         <div className="product-list d-flex flex-wrap justify-content-center">
           {products.map((product) => (
@@ -121,9 +126,47 @@ const Dashboard = () => {
               <div className="product-info card-body">
                 <h3 className="card-title">{product.name}</h3>
                 <p className="card-text">{product.price} IDR</p>
+
+                {/* Informasi tentang warna */}
+                <div className="product-options">
+                  <div className="color-options">
+                    <p><strong>Warna:</strong></p>
+                    <div className="colors">
+                      {product.colors?.map((color, index) => (
+                        <span
+                          key={index}
+                          className="color-option"
+                          style={{ backgroundColor: color }}
+                        ></span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Informasi tentang ukuran */}
+                  <div className="size-options">
+                    <p><strong>Ukuran:</strong></p>
+                    <ul>
+                      {product.sizes?.map((size, index) => (
+                        <li key={index}>{size}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Informasi tentang desain */}
+                  <div className="design-options">
+                    <p><strong>Pilihan Desain:</strong></p>
+                    <ul>
+                      {product.designs?.map((design, index) => (
+                        <li key={index}>{design}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Tombol untuk order */}
                 <button
                   className="btn btn-success"
-                  onClick={() => handleOrderRedirect(product)} // Panggil fungsi navigasi
+                  onClick={() => handleOrderRedirect(product)}
                 >
                   Order
                 </button>

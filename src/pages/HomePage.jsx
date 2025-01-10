@@ -79,8 +79,8 @@ const HomePage = () => {
                   Login
                 </a>
               ) : (
-                <a href="/dashboard" className="btn bg-transparent text-white border-2 border-white hover:bg-white hover:text-red-500 py-2 px-6 rounded-lg transition">
-                  Lihat Dashboard
+                <a href="/order" className="btn bg-transparent text-white border-2 border-white hover:bg-white hover:text-red-500 py-2 px-6 rounded-lg transition">
+                  Order
                 </a>
               )}
             </div>
