@@ -73,7 +73,6 @@ const OrderPage = () => {
       
       // Simpan kembali seluruh array pesanan (termasuk pesanan baru) ke localStorage
       localStorage.setItem('checkoutOrders', JSON.stringify(updatedOrders));
-      
   
       console.log('Pesanan baru disimpan:', newOrder);
       console.log('Semua pesanan:', updatedOrders);
@@ -102,7 +101,10 @@ const OrderPage = () => {
       alert(error.response?.data?.message || 'Gagal membuat pesanan.');
     }
   };
-  
+
+  const handleBack = () => {
+    navigate(-1); // Kembali ke halaman sebelumnya
+  };
 
   return (
     <div className="order-page">
@@ -192,8 +194,16 @@ const OrderPage = () => {
                 className="form-control"
               />
             </div>
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className="btn btn-primary w-100 mb-2">
               Kirim Pesanan
+            </button>
+            {/* Tombol Kembali */}
+            <button
+              type="button"
+              onClick={handleBack}
+              className="btn btn-secondary w-100"
+            >
+              Kembali
             </button>
           </form>
         </div>
