@@ -1,0 +1,32 @@
+.order-page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table thead {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+  }
+  
+  .table td,
+  .table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s;
+  }
+  

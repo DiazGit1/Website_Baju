@@ -1,0 +1,77 @@
+/* Header Styles */
+.header {
+  position: fixed; /* Header tetap terlihat saat scroll */
+  top: 0; /* Posisi di bagian atas layar */
+  left: 0; /* Dimulai dari sisi kiri layar */
+  width: 100%; /* Lebar penuh layar */
+  background-color: #333; /* Warna background */
+  color: #fff; /* Warna teks */
+  padding: 2px 0; /* Sesuaikan jarak atas dan bawah */
+  z-index: 1000; /* Prioritas rendering di atas elemen lainnya */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+/* Kontainer dalam header */
+.header .container {
+  display: flex; /* Flexbox untuk mengatur elemen dalam header */
+  justify-content: space-between; /* Elemen terpisah kiri dan kanan */
+  align-items: center; /* Rata tengah vertikal */
+  max-width: 1200px; /* Lebar maksimal */
+  margin: 0 auto; /* Pusatkan kontainer secara horizontal */
+  padding: 0 20px; /* Jarak sisi kiri dan kanan */
+}
+
+/* Logo dalam header */
+.header .logo a {
+  text-decoration: none; /* Hilangkan garis bawah */
+  font-size: 1.5rem; /* Ukuran teks logo */
+  color: #ff7f50; /* Warna logo */
+  font-weight: bold; /* Ketebalan teks */
+}
+
+/* Navigasi dalam header */
+.header .navbar .nav-links {
+  display: flex; /* Susunan elemen horizontal */
+  list-style: none; /* Hilangkan tanda bullet */
+  gap: 15px; /* Jarak antar item navigasi */
+}
+
+/* Tautan navigasi */
+.header .navbar {
+  text-decoration: none; /* Hilangkan garis bawah */
+  color: #fff; /* Warna tautan */
+  font-size: 1rem; /* Ukuran teks tautan */
+  transition: color 0.3s ease; /* Efek transisi warna */
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Jarak antara ikon dan teks */
+  text-decoration: none;
+  color: #c2bebd;
+}
+
+.nav-links li a:hover {
+  color: #ff7f50; /* Warna saat hover */
+}
+
+
+.header .navbar {
+  color: #ff7f50; /* Warna saat hover */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .header .navbar .nav-links {
+    flex-direction: column; /* Susunan vertikal untuk layar kecil */
+    gap: 10px; /* Jarak antar tautan */
+  }
+}
+
+/* Atur margin untuk konten agar tidak tertutup oleh header */
+body {
+  margin: 0;
+  padding-top: 70px; /* Sesuaikan dengan tinggi header */
+  font-family: 'Arial', sans-serif;
+}

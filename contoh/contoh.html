@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Shirt Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <div class="logo text-2xl font-bold text-orange-400">
+        <a href="/">T-Shirt Store</a>
+      </div>
+      <nav>
+        <ul class="flex space-x-6">
+          <li>
+            <a href="/" class="text-white hover:text-orange-400">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/products" class="text-white hover:text-orange-400">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/dashboard" class="text-white hover:text-orange-400">
+              <i class="fas fa-tshirt"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/login" class="text-white hover:text-orange-400">
+              <i class="fas fa-sign-in-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 pt-24">
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-r from-orange-400 to-red-500 text-white py-32 text-center">
+      <div class="max-w-lg mx-auto">
+        <h1 class="text-4xl font-bold mb-6">Welcome to Lyshirt T-Shirt</h1>
+        <p class="text-lg mb-8">Design your own style with our premium T-shirt printing services!</p>
+        <div class="flex justify-center gap-4">
+          <a href="/login" class="btn bg-white text-red-500 hover:bg-red-500 hover:text-white py-2 px-6 rounded-lg transition">
+            Login
+          </a>
+          <a href="/dashboard" class="btn bg-transparent text-white border-2 border-white hover:bg-white hover:text-red-500 py-2 px-6 rounded-lg transition">
+            Lihat Dashboard
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section class="product-showcase py-16 bg-white text-center">
+      <h2 class="text-3xl font-semibold text-red-500 mb-12">Our T-Shirt Collection</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Product Cards -->
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:translate-y-2">
+          <img src="src/assets/baju_1.jpg" alt="T-Shirt 1" class="w-full h-48 object-cover mb-4 rounded-md" />
+          <p class="text-xl font-medium text-gray-800">KAOS</p>
+        </div>
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:translate-y-2">
+          <img src="src/assets/baju_2.jpg" alt="T-Shirt 2" class="w-full h-48 object-cover mb-4 rounded-md" />
+          <p class="text-xl font-medium text-gray-800">KAOS</p>
+        </div>
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:translate-y-2">
+          <img src="src/assets/baju_3.jpg" alt="T-Shirt 3" class="w-full h-48 object-cover mb-4 rounded-md" />
+          <p class="text-xl font-medium text-gray-800">KOAS</p>
+        </div>
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:translate-y-2">
+          <img src="src/assets/baju_4.jpg" alt="T-Shirt 4" class="w-full h-48 object-cover mb-4 rounded-md" />
+          <p class="text-xl font-medium text-gray-800">KAOS</p>
+        </div>
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:translate-y-2">
+          <img src="src/assets/baju_5.jpg" alt="T-Shirt 5" class="w-full h-48 object-cover mb-4 rounded-md" />
+          <p class="text-xl font-medium text-gray-800">KAOS</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-gray-900 text-white text-center py-6 mt-auto">
+    <p>&copy; 2024 T-Shirt Printing Store. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
