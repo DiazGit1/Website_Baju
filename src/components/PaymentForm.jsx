@@ -5,6 +5,7 @@ const PaymentForm = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [paymentProof, setPaymentProof] = useState(null);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -13,7 +14,7 @@ const PaymentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !address || !paymentMethod) {
+    if (!name || !address || !paymentMethod || !paymentProof) {
       setError("Semua kolom harus diisi!");
       return;
     }
@@ -25,6 +26,13 @@ const PaymentForm = () => {
 
   const handleBack = () => {
     navigate("/"); // Arahkan ke halaman product
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPaymentProof(file);
+    }
   };
 
   return (
@@ -94,6 +102,26 @@ const PaymentForm = () => {
               </p>
             </div>
           )}
+
+          {/* Upload Bukti Pembayaran */}
+          <div className="mb-4">
+            <label htmlFor="paymentProof" className="block text-sm font-medium text-gray-700 mb-2">
+              Bukti Pembayaran
+            </label>
+            <input
+              type="file"
+              id="paymentProof"
+              accept="image/*,application/pdf"
+              onChange={handleFileChange}
+              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 bg-blue-100"
+              required
+            />
+            {paymentProof && (
+              <p className="mt-2 text-sm text-gray-600">
+                {paymentProof.name} (Klik untuk mengganti)
+              </p>
+            )}
+          </div>
 
           {/* Error Message */}
           {error && <p className="text-sm text-red-500 mb-4">{error}</p>}

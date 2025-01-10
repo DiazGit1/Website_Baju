@@ -37,7 +37,7 @@ const HomePage = () => {
                 </a>
               </li>
               <li>
-                <a href="/dashboard" className="text-white hover:text-orange-400">
+                <a href="/order" className="text-white hover:text-orange-400">
                   <FontAwesomeIcon icon={faTshirt} />
                 </a>
               </li>
