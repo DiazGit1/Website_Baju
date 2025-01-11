@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const PaymentForm = () => {
   const [name, setName] = useState("");
@@ -11,7 +12,7 @@ const PaymentForm = () => {
 
   const bankAccount = "12334455677890";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !address || !paymentMethod || !paymentProof) {
@@ -19,13 +20,33 @@ const PaymentForm = () => {
       return;
     }
 
-    // Simulasikan pembayaran berhasil
-    alert("Pembayaran berhasil!");
-    navigate("/"); // Arahkan ke halaman home
+    try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("address", address);
+      formData.append("paymentMethod", paymentMethod);
+      if (paymentMethod === "bank") {
+        formData.append("bankAccount", bankAccount);
+      }
+      formData.append("paymentProof", paymentProof);
+
+      // Mengirim data ke backend
+      await axios.post("http://localhost:5000/api/payments", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      alert("Pembayaran berhasil!");
+      navigate("/"); // Arahkan ke halaman home
+    } catch (err) {
+      console.error("Gagal memuat produk:", err);
+      setError("Gagal mengirim pembayaran.");
+    }
   };
 
   const handleBack = () => {
-    navigate("/"); // Arahkan ke halaman product
+    navigate("/"); // Arahkan ke halaman produk
   };
 
   const handleFileChange = (e) => {
